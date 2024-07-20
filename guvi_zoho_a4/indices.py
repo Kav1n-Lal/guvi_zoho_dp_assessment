@@ -13,13 +13,16 @@
 def return_indices(num_list,target):
   s=[]
   i=0
-  while True:
+  while i<len(num_list):
     t=target-num_list[i]
     if t in num_list:
       s.append(num_list.index(num_list[i]))
-      s.append(num_list.index(t,i+1))
+      try:
+        s.append(num_list.index(t,i+1))
+      except:
+        s.append(num_list.index(t))
     i+=1
-    return s
+  return list(set(s))
 a1=input().split()
 a=list(map(int,a1))
 b=int(input())
