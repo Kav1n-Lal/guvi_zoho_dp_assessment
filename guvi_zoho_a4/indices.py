@@ -17,7 +17,7 @@ def return_indices(num_list,target):
     t=target-num_list[i]
     if t in num_list:
       s.append(num_list.index(num_list[i]))
-      s.append(num_list.index(t))
+      s.append(num_list.index(t,i+1))
     i+=1
     return s
 a1=input().split()
